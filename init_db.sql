@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS sentences (
-  id int NOT NULL,
-  content varchar(280) NOT NULL,
+  id int NOT NULL AUTO_INCREMENT,
+  content varchar(280) NOT NULL unique,
   PRIMARY KEY (ID)
 );
 CREATE TABLE IF NOT EXISTS pronouns (
@@ -13,9 +13,12 @@ CREATE TABLE IF NOT EXISTS pronouns (
   plural bool default false,
   PRIMARY KEY (ID)
 );
-INSERT INTO pronouns (nom, obj, poss, posspro, ref, plural) values
+REPLACE INTO pronouns (nom, obj, poss, posspro, ref, plural) values
 ('they', 'them', 'their', 'theirs', 'themselves', true),
 ('he', 'him', 'his', 'his', 'himself', false),
 ('she', 'her', 'her', 'hers', 'herself', false),
 ('it', 'it', 'its', 'its', 'itself', false)
+;
+REPLACE INTO sentences (content) values
+('This is a test sentence for {name}! {name} is a person, and I like {obj} a lot. Etc., etc.')
 ;
