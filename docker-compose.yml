@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+    api:
+        build: .
+        environment: 
+            FLASK_APP: app.py
+            FLASK_RUN_HOST: 0.0.0.0
+        ports:
+            - "5000:5000"
+        command: flask run
+    db:
+        image: "mariadb"
+        restart: always
+        volumes:
+            - ./db:/var/lib/mysql
+            - ./init_db.sql:/docker-entrypoint-initdb.d/
+        environment: 
+            MYSQL_ROOT_PASSWORD: '${EUPHYDB_ROOT_PASS}'
+            MYSQL_USER: 'euphy'
+            MYSQL_PASS: '${EUPHYDB_USER_PASS}'
