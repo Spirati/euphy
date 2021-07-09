@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS sentences (
   id int NOT NULL AUTO_INCREMENT,
-  content varchar(280) NOT NULL unique,
+  content varchar(255) NOT NULL unique,
   PRIMARY KEY (ID)
 );
 CREATE TABLE IF NOT EXISTS pronouns (

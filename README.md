@@ -1,7 +1,7 @@
 # Euphy: The world's first genderful RESTful API
 ## Endpoints
-### `GET` /sentence
-### `GET` /pronouns
+### `POST` /sentence
+### `POST` /pronouns
 ## Set up a development environment (Linux)
 1. Clone the repository: `git clone https://github.com/Spirati/euphy.git`
 2. Create a `.env` file in the root of the repository: `touch .env`
